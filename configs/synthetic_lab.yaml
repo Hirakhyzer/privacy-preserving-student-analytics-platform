@@ -1,0 +1,13 @@
+seed: 42
+students: 120
+weeks: 10
+privacy:
+  pseudonym_salt: synthetic-student-support-lab
+  k_threshold: 5
+prediction:
+  support_review_threshold: 0.58
+  high_support_review_threshold: 0.76
+fairness:
+  max_support_rate_gap: 0.18
+  max_mean_score_gap: 0.12
+boundary: independent synthetic student-support review simulator only

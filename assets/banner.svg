@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-label="Privacy-Preserving Student Analytics Platform banner">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="45%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+    <radialGradient id="glowA" cx="18%" cy="16%" r="70%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity=".46"/>
+      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowB" cx="86%" cy="14%" r="72%">
+      <stop offset="0%" stop-color="#a78bfa" stop-opacity=".44"/>
+      <stop offset="100%" stop-color="#a78bfa" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity=".34"/></filter>
+    <style>
+      .title{font:800 50px Arial,Helvetica,sans-serif;fill:#f8fafc;letter-spacing:-1px}
+      .subtitle{font:700 24px Arial,Helvetica,sans-serif;fill:#bae6fd}
+      .small{font:500 16px Arial,Helvetica,sans-serif;fill:#cbd5e1}
+      .chip{font:700 15px Arial,Helvetica,sans-serif;fill:#ecfeff}
+      .node{font:700 15px Arial,Helvetica,sans-serif;fill:#f8fafc}
+      .tiny{font:500 12px Arial,Helvetica,sans-serif;fill:#94a3b8}
+    </style>
+  </defs>
+  <rect width="1200" height="360" rx="30" fill="url(#bg)"/>
+  <rect width="1200" height="360" rx="30" fill="url(#glowA)"/>
+  <rect width="1200" height="360" rx="30" fill="url(#glowB)"/>
+
+  <g opacity=".14" stroke="#e0f2fe" stroke-width="1.2" fill="none">
+    <path d="M72 92 C210 28 342 160 482 98 S735 38 888 112 S1046 214 1155 125"/>
+    <path d="M86 292 C248 210 410 330 560 252 S805 176 940 265 S1098 318 1160 250"/>
+    <path d="M115 58 L320 150 L510 82 L705 190 L934 90 L1110 184"/>
+    <path d="M170 320 L330 236 L492 288 L690 208 L870 246 L1088 186"/>
+  </g>
+
+  <g transform="translate(68 72)">
+    <text class="title" x="0" y="52">Privacy-Preserving</text>
+    <text class="title" x="0" y="108">Student Analytics Platform</text>
+    <text class="subtitle" x="0" y="150">Ethical learning-support analytics with privacy, fairness, governance, and auditability</text>
+    <text class="small" x="0" y="186">Synthetic student records • pseudonymization • fairness audit • safe intervention review • access governance</text>
+
+    <g transform="translate(0 222)">
+      <rect x="0" y="0" width="108" height="34" rx="17" fill="#0e7490" opacity=".9"/>
+      <text class="chip" x="54" y="23" text-anchor="middle">Privacy</text>
+      <rect x="124" y="0" width="116" height="34" rx="17" fill="#6d28d9" opacity=".9"/>
+      <text class="chip" x="182" y="23" text-anchor="middle">Fairness</text>
+      <rect x="256" y="0" width="132" height="34" rx="17" fill="#047857" opacity=".9"/>
+      <text class="chip" x="322" y="23" text-anchor="middle">Governance</text>
+      <rect x="404" y="0" width="116" height="34" rx="17" fill="#1d4ed8" opacity=".9"/>
+      <text class="chip" x="462" y="23" text-anchor="middle">Audit Logs</text>
+      <rect x="536" y="0" width="174" height="34" rx="17" fill="#b91c1c" opacity=".9"/>
+      <text class="chip" x="623" y="23" text-anchor="middle">Student Safety</text>
+    </g>
+  </g>
+
+  <g filter="url(#shadow)" transform="translate(820 58)">
+    <rect x="0" y="0" width="300" height="238" rx="28" fill="#020617" opacity=".62" stroke="#334155"/>
+    <text class="node" x="150" y="38" text-anchor="middle">Trusted Analytics Flow</text>
+    <g stroke="#67e8f9" stroke-width="2" fill="none" opacity=".75">
+      <path d="M70 78 L150 118 L230 78"/>
+      <path d="M150 118 L150 172"/>
+      <path d="M94 188 L150 172 L206 188"/>
+    </g>
+    <g>
+      <circle cx="70" cy="78" r="31" fill="#0e7490"/><text class="tiny" x="70" y="75" text-anchor="middle" fill="#fff">synthetic</text><text class="tiny" x="70" y="90" text-anchor="middle" fill="#fff">data</text>
+      <circle cx="230" cy="78" r="31" fill="#6d28d9"/><text class="tiny" x="230" y="75" text-anchor="middle" fill="#fff">privacy</text><text class="tiny" x="230" y="90" text-anchor="middle" fill="#fff">checks</text>
+      <circle cx="150" cy="118" r="35" fill="#1d4ed8"/><text class="tiny" x="150" y="114" text-anchor="middle" fill="#fff">support</text><text class="tiny" x="150" y="129" text-anchor="middle" fill="#fff">signals</text>
+      <circle cx="94" cy="188" r="31" fill="#047857"/><text class="tiny" x="94" y="185" text-anchor="middle" fill="#fff">fairness</text><text class="tiny" x="94" y="200" text-anchor="middle" fill="#fff">audit</text>
+      <circle cx="206" cy="188" r="31" fill="#b91c1c"/><text class="tiny" x="206" y="185" text-anchor="middle" fill="#fff">human</text><text class="tiny" x="206" y="200" text-anchor="middle" fill="#fff">review</text>
+    </g>
+  </g>
+</svg>

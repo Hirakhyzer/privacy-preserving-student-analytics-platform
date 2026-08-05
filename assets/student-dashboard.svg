@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="520" viewBox="0 0 1100 520" role="img" aria-label="Privacy-preserving student analytics dashboard preview">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#f8fafc"/><stop offset="100%" stop-color="#ecfeff"/></linearGradient>
+    <filter id="shadow"><feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#0f172a" flood-opacity=".12"/></filter>
+    <style>
+      .title{font:800 28px Arial,Helvetica,sans-serif;fill:#0f172a}
+      .label{font:700 17px Arial,Helvetica,sans-serif;fill:#0f172a}
+      .muted{font:500 13px Arial,Helvetica,sans-serif;fill:#64748b}
+      .metric{font:800 28px Arial,Helvetica,sans-serif;fill:#0f172a}
+      .pill{font:700 12px Arial,Helvetica,sans-serif;fill:#ffffff}
+      .axis{font:500 11px Arial,Helvetica,sans-serif;fill:#64748b}
+    </style>
+  </defs>
+  <rect width="1100" height="520" rx="28" fill="url(#bg)"/>
+  <text class="title" x="52" y="54">Student Support Analytics Dashboard</text>
+  <text class="muted" x="52" y="80">Synthetic learning records • privacy-preserving support signals • fairness and governance review</text>
+
+  <g filter="url(#shadow)">
+    <rect x="52" y="112" width="220" height="110" rx="20" fill="#ffffff"/>
+    <text class="muted" x="78" y="145">Support signals reviewed</text>
+    <text class="metric" x="78" y="185">1,240</text>
+    <rect x="78" y="196" width="88" height="24" rx="12" fill="#0e7490"/><text class="pill" x="122" y="213" text-anchor="middle">human review</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="300" y="112" width="220" height="110" rx="20" fill="#ffffff"/>
+    <text class="muted" x="326" y="145">Pseudonymized records</text>
+    <text class="metric" x="326" y="185">100%</text>
+    <rect x="326" y="196" width="96" height="24" rx="12" fill="#6d28d9"/><text class="pill" x="374" y="213" text-anchor="middle">no direct IDs</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="548" y="112" width="220" height="110" rx="20" fill="#ffffff"/>
+    <text class="muted" x="574" y="145">Fairness gap watch</text>
+    <text class="metric" x="574" y="185">3 flags</text>
+    <rect x="574" y="196" width="116" height="24" rx="12" fill="#f59e0b"/><text class="pill" x="632" y="213" text-anchor="middle">needs review</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="796" y="112" width="250" height="110" rx="20" fill="#ffffff"/>
+    <text class="muted" x="822" y="145">Access governance</text>
+    <text class="metric" x="822" y="185">97.8%</text>
+    <rect x="822" y="196" width="118" height="24" rx="12" fill="#047857"/><text class="pill" x="881" y="213" text-anchor="middle">appropriate use</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="52" y="252" width="484" height="214" rx="22" fill="#ffffff"/>
+    <text class="label" x="78" y="288">Support need distribution</text>
+    <text class="muted" x="78" y="310">Review signals are non-punitive and require educator oversight</text>
+    <line x1="88" y1="422" x2="490" y2="422" stroke="#cbd5e1"/>
+    <line x1="88" y1="342" x2="88" y2="422" stroke="#cbd5e1"/>
+    <rect x="118" y="370" width="58" height="52" rx="8" fill="#0e7490" opacity=".9"/>
+    <rect x="212" y="344" width="58" height="78" rx="8" fill="#1d4ed8" opacity=".9"/>
+    <rect x="306" y="390" width="58" height="32" rx="8" fill="#6d28d9" opacity=".9"/>
+    <rect x="400" y="360" width="58" height="62" rx="8" fill="#f59e0b" opacity=".9"/>
+    <text class="axis" x="147" y="442" text-anchor="middle">low</text>
+    <text class="axis" x="241" y="442" text-anchor="middle">medium</text>
+    <text class="axis" x="335" y="442" text-anchor="middle">high</text>
+    <text class="axis" x="429" y="442" text-anchor="middle">review</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="566" y="252" width="480" height="214" rx="22" fill="#ffffff"/>
+    <text class="label" x="592" y="288">Trust and safety checks</text>
+    <text class="muted" x="592" y="310">Privacy, fairness, access, and intervention governance are audited together</text>
+    <g transform="translate(602 338)">
+      <rect x="0" y="0" width="392" height="22" rx="11" fill="#e2e8f0"/>
+      <rect x="0" y="0" width="348" height="22" rx="11" fill="#0e7490"/>
+      <text class="axis" x="0" y="-8">Pseudonymization coverage</text><text class="axis" x="406" y="16">100%</text>
+      <rect x="0" y="52" width="392" height="22" rx="11" fill="#e2e8f0"/>
+      <rect x="0" y="52" width="294" height="22" rx="11" fill="#6d28d9"/>
+      <text class="axis" x="0" y="44">Fairness monitoring completeness</text><text class="axis" x="406" y="68">84%</text>
+      <rect x="0" y="104" width="392" height="22" rx="11" fill="#e2e8f0"/>
+      <rect x="0" y="104" width="320" height="22" rx="11" fill="#047857"/>
+      <text class="axis" x="0" y="96">Access purpose compliance</text><text class="axis" x="406" y="120">92%</text>
+    </g>
+  </g>
+</svg>

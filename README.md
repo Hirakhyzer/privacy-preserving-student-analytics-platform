@@ -1,15 +1,44 @@
-# Privacy-Preserving Student Analytics Platform
+<p align="center">
+  <img src="assets/banner.svg" alt="Privacy-Preserving Student Analytics Platform banner" width="100%" />
+</p>
 
-<p align="center"><strong>Independent research-grade student-support analytics platform for predicting learning support needs while protecting student identity, auditing fairness, and preventing unfair or harmful intervention using synthetic education data.</strong></p>
+<h1 align="center">Privacy-Preserving Student Analytics Platform</h1>
+
+<p align="center">
+  <b>A research-grade student-support analytics platform for predicting learning-support needs while protecting identity, auditing fairness, governing access, and preventing harmful automated intervention.</b>
+</p>
 
 <p align="center">
   <a href="../../actions/workflows/python-checks.yml"><img src="../../actions/workflows/python-checks.yml/badge.svg" alt="Python checks"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-1f6feb.svg" alt="MIT License"></a>
-  <img src="https://img.shields.io/badge/default%20data-synthetic%20student%20records-2ad4c9.svg" alt="Synthetic data">
-  <img src="https://img.shields.io/badge/project-independent%20student%20support%20simulator-f59e0b.svg" alt="Independent simulator">
+  <img alt="Status" src="https://img.shields.io/badge/status-research--prototype-7C3AED?style=for-the-badge" />
+  <img alt="Python" src="https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img alt="Education AI" src="https://img.shields.io/badge/Education--AI-Student--Support-06B6D4?style=for-the-badge" />
+  <img alt="Privacy" src="https://img.shields.io/badge/Privacy-Preserving-10B981?style=for-the-badge" />
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-green?style=for-the-badge" />
 </p>
 
-> **Student-support boundary:** this repository uses fictional synthetic students, learning records, access logs, and support-review events by default. It is independent research and student-support review infrastructure only. It is not a student surveillance system, grading tool, disciplinary system, admissions tool, legal compliance certification, or automatic intervention engine.
+---
+
+## Overview
+
+**Privacy-Preserving Student Analytics Platform** is an independent academic research prototype for studying how learning-support analytics can be designed responsibly. It uses fictional synthetic student records, learning activity, access logs, and support-review events to evaluate a pipeline that produces **student-support signals** while preserving privacy, checking fairness, auditing access, and requiring human review.
+
+The project is built around one key idea: **student analytics should support students, not label, punish, rank, or surveil them**.
+
+It is especially useful for research in:
+
+- Privacy-preserving education analytics.
+- Responsible AI in learning environments.
+- Student-support decision workflows.
+- Fairness auditing and subgroup gap analysis.
+- Access governance and auditability.
+- Synthetic data generation for sensitive domains.
+
+> **Student-support boundary:** This repository uses fictional synthetic students, learning records, access logs, and support-review events by default. It is not a student surveillance system, grading tool, disciplinary system, admissions tool, legal compliance certification, or automatic intervention engine.
+
+<p align="center">
+  <img src="assets/student-dashboard.svg" alt="Privacy-preserving student analytics dashboard preview" width="92%" />
+</p>
 
 ---
 
@@ -18,7 +47,7 @@
 Can a privacy-preserving student analytics platform identify learning-support needs while protecting student identity, auditing fairness, and preventing unfair or harmful intervention?
 
 | Research question | Evidence generated locally |
-| --- | --- |
+|---|---|
 | Which learning records suggest support may be useful? | Support-need prediction table with confidence flags |
 | How is student identity protected? | Pseudonymized records and quasi-identifier privacy audit |
 | Are support flags distributed fairly across subgroups? | Fairness audit by access, commute, and first-generation proxy groups |
@@ -30,7 +59,9 @@ Can a privacy-preserving student analytics platform identify learning-support ne
 
 ## Architecture
 
-<p align="center"><img src="assets/student_analytics_architecture.svg" alt="Privacy-preserving student analytics architecture" width="100%"></p>
+<p align="center">
+  <img src="assets/student_analytics_architecture.svg" alt="Privacy-preserving student analytics architecture" width="100%" />
+</p>
 
 ```mermaid
 flowchart LR
@@ -44,6 +75,25 @@ flowchart LR
   E --> H
   G --> H
 ```
+
+<p align="center">
+  <img src="assets/privacy-workflow.svg" alt="Leakage-aware student support workflow" width="92%" />
+</p>
+
+---
+
+## Core capabilities
+
+| Capability | What it does | Why it matters |
+|---|---|---|
+| Synthetic education data | Generates fictional students, learning records, weekly activity, and support events | Enables safe experimentation without real student records |
+| Pseudonymization | Replaces direct identifiers with stable salted IDs | Reduces identity exposure in outputs |
+| Privacy-risk audit | Checks small quasi-identifier groups | Highlights re-identification risk patterns |
+| Support-need scoring | Produces transparent support signals | Helps study early support workflows without black-box claims |
+| Fairness audit | Compares support rates and score gaps across groups | Detects possible over-support or under-support risk |
+| Intervention governance | Reviews whether wording is safe and non-punitive | Prevents harmful automatic action framing |
+| Access-log audit | Flags unusual roles, purposes, after-hours access, and bulk export | Makes privacy governance inspectable |
+| Audit ledger | Records reproducible run metadata in a hash-chained log | Supports traceability and research accountability |
 
 ---
 
@@ -71,6 +121,12 @@ Optional controls:
 
 ```bash
 python scripts/run_synthetic_student_lab.py --students 120 --weeks 10 --seed 42
+```
+
+Run tests:
+
+```bash
+python -m pytest
 ```
 
 ---
@@ -103,34 +159,43 @@ outputs/figures/synthetic_intervention_governance.png
 
 ## Privacy-preserving design
 
-| Area | What is included |
-| --- | --- |
-| Synthetic data | No real student records, names, grades, or identities |
-| Pseudonymization | Stable salted pseudonymous IDs for students and access logs |
-| Privacy risk audit | k-anonymity-style group-size checks for quasi-identifiers |
-| Data minimization | Prediction uses aggregate learning signals, not names or direct identifiers |
-| Access governance | Role, purpose, after-hours, and high-sensitivity access checks |
-| Auditability | Hash-chained audit records for reproducible review |
+| Area | Design choice |
+|---|---|
+| Synthetic data only | No real students, names, grades, attendance records, or identities are included |
+| Pseudonymization | Stable salted pseudonymous IDs are used for student and access-log records |
+| Data minimization | Support scoring uses aggregate learning signals rather than direct identifiers |
+| Quasi-identifier audit | Small group sizes are flagged as privacy-risk signals |
+| Access governance | Role, purpose, after-hours, sensitivity, and bulk access are reviewed |
+| Human review | Support signals are not treated as automatic decisions |
+| Auditability | Hash-chained logs preserve traceable experiment evidence |
 
 ---
 
-## What the system audits
+## Fairness and student-safety checks
 
-| Audit area | Examples |
-| --- | --- |
-| Learning support | Engagement trend, attendance trend, completion pattern, help-seeking signal |
-| Fairness | Support-rate gap, mean-score gap, over-intervention risk, under-support risk |
-| Privacy | Small-group risk, quasi-identifier grouping, pseudonymized outputs |
-| Intervention governance | Human review, safe language, no automatic discipline, no automatic grade action |
-| Access | Unusual role access, after-hours access, unsupported purpose, bulk export review |
+| Audit area | Example questions |
+|---|---|
+| Support-rate gap | Are some groups flagged much more often than others? |
+| Under-support risk | Are vulnerable or low-access groups less likely to receive support signals? |
+| Over-intervention risk | Are any groups exposed to excessive review burden? |
+| Score gap | Do average support scores differ sharply across proxy groups? |
+| Intervention language | Is the suggested action supportive, non-punitive, and human-reviewed? |
+| Appeal boundary | Could a real student contest or correct the interpretation? |
 
 ---
 
-## Independent student-support boundary
+## Access governance model
 
-This project is an independent synthetic research simulator. Real-world use would require student consent and notice, data-protection review, educator oversight, fairness validation, appeal pathways, retention controls, accessibility review, and local policy governance.
+The access-audit layer treats student analytics as sensitive infrastructure. It checks:
 
-The system should never be used as the sole basis for grading, discipline, admissions, immigration decisions, scholarship decisions, surveillance, automated interventions, or high-stakes educational decisions.
+- whether the role is appropriate;
+- whether the declared purpose is valid;
+- whether access occurs after hours;
+- whether the event involves sensitive records;
+- whether bulk export needs special review;
+- whether audit evidence can be reproduced later.
+
+This is a governance simulation, not a production identity-access-management system.
 
 ---
 
@@ -154,6 +219,9 @@ docs/
   student_support_boundary.md
   synthetic_lab.md
   report_template.md
+  governance-and-ethics.md
+  reproducibility-playbook.md
+  publication-readiness-plan.md
 tests/
   test_synthetic.py
   test_privacy_prediction.py
@@ -163,9 +231,52 @@ tests/
 
 ---
 
+## Documentation
+
+- [`docs/methodology.md`](docs/methodology.md): scoring, pseudonymization, privacy, fairness, access audit, and limitations.
+- [`docs/student_support_boundary.md`](docs/student_support_boundary.md): safe student-support use boundary.
+- [`docs/synthetic_lab.md`](docs/synthetic_lab.md): commands and synthetic output interpretation.
+- [`docs/report_template.md`](docs/report_template.md): report structure for experiment outputs.
+- [`docs/governance-and-ethics.md`](docs/governance-and-ethics.md): responsible-use, privacy, and fairness principles.
+- [`docs/reproducibility-playbook.md`](docs/reproducibility-playbook.md): experiment records, outputs, and sharing checklist.
+- [`docs/publication-readiness-plan.md`](docs/publication-readiness-plan.md): research questions and academic extension plan.
+
+---
+
+## Research safeguards
+
+1. Use synthetic records for default experiments.
+2. Never treat support scores as labels about a student.
+3. Review privacy-risk flags before interpreting results.
+4. Report fairness metrics by subgroup.
+5. Require human review for every intervention suggestion.
+6. Avoid punitive or deficit-based wording.
+7. Preserve audit logs with run outputs.
+8. State clearly that this is not a deployment-ready education system.
+
+---
+
+## Future extensions
+
+| Extension | Requirement before claiming results |
+|---|---|
+| Differential privacy accountant | Formal mechanism, privacy budget reporting, and utility trade-off analysis |
+| Federated student analytics | Site-level simulation, secure aggregation boundary, and leakage review |
+| Real learning-management-system data | Institutional authorization, consent/notice, privacy review, and governance approval |
+| Explainable support signals | Human-interpretable feature contribution reports |
+| Educator dashboard | Role-based access, audit trails, and accessibility review |
+| Student-facing transparency | Explanation, correction, and appeal workflows |
+
+---
+
 ## Limitations
 
 - Synthetic data validates the pipeline but does not prove real-world educational impact.
-- Support-need scores are review signals, not diagnoses or labels.
+- Support-need scores are review signals, not diagnoses, grades, or student labels.
 - Fairness metrics are descriptive and must be interpreted with education experts.
-- Real deployments require privacy, legal, accessibility, educator, student, and guardian governance.
+- Pseudonymization does not make real sensitive data automatically safe.
+- Real deployments require privacy, legal, accessibility, educator, student, guardian, and institutional governance.
+
+## License
+
+Released under the [MIT License](LICENSE). Real student records are not included.
